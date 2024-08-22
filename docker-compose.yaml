@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  backend:
+    build: ./course_management
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./course_management:/app
+    depends_on:
+      - frontend
+
+  frontend:
+    build: ./course-management-frontend
+    ports:
+      - "3000:3000"
